@@ -2,9 +2,54 @@
   box-sizing: border-box;
 }
 
+label {
+  padding: 1rem;
+  font-weight: bold;
+}
+
+select {
+  margin: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(205, 203, 203);
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(241, 240, 240);
+}
+
+table {
+  width: 70%;
+}
+
+.add-event {
+  color: white;
+  background-color: grey;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.add-event:hover {
+  color: white;
+  background-color: rgb(50, 50, 50);
+}
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
