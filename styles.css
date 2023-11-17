@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.hidden {
+  display: none;
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -47,12 +51,17 @@ table {
   width: 70%;
 }
 
+textarea {
+  margin: 1rem;
+}
+
 .add-event {
   color: white;
   background-color: grey;
   border: none;
   border-radius: 5%;
   cursor: pointer;
+  padding: 0.5rem;
 }
 
 .add-event:hover {
@@ -74,5 +83,71 @@ table {
   background-color: blue;
   color: white;
   border: none;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.popup {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  width: 300px;
+  height: 500px;
+  position: absolute;
+  top: 15%;
+  bottom: 25%;
+  right: 0;
+  left: 0;
+  margin: auto;
+  background-color: white;
+}
+
+.button-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cancel {
+  color: white;
+  background-color: grey;
+  border: none;
   border-radius: 5%;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.confirm {
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 5%;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.cancel:hover {
+  cursor: pointer;
+  background-color: rgb(50, 50, 50);
+}
+
+.confirm:hover {
+  cursor: pointer;
+  background-color: rgb(4, 65, 4);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
 }

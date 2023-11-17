@@ -23,7 +23,7 @@
             <option value="Sunday">Sunday</option>
           </select>
         </div>
-        <button class="add-event">Add New Event</button>
+        <button type="button" class="add-event">Add New Event</button>
       </form>
       <table>
         <thead>
@@ -52,6 +52,8 @@
     </div>
     <div>
       <form>
+        <div class="hidden overlay">
+        <div class="popup">
         <label for="event-time">Time of Event</label>
         <select>
           <option value="00:00">Midnight</option>
@@ -79,7 +81,7 @@
           <option value="22:00">22:00</option>
           <option value="23:00">23:00</option>
         </select>
-        <div class="popup">
+
           <label for="day">Day of the Week</label>
           <select>
             <option value="monday">Monday</option>
@@ -92,6 +94,11 @@
           </select>
           <label for="event-info">Event Information</label>
           <textarea required rows="10" name="event-info"></textarea>
+          <div class="button-box">
+            <button class="cancel">Cancel</button>
+            <button class="confirm">Confirm</button>
+          </div>
+        </div>
         </div>
       </form>
     </div>
