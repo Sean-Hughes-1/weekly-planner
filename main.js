@@ -40,8 +40,20 @@ function renderEntry(entry) {
   return $tr;
 }
 
-$confirmButton.addEventListener('submit', (event) => {
+$entryForm.addEventListener('click', (event) => {
   event.preventDefault();
-  const $timeOfEvent = $entryForm.elements[0].value;
-  console.log($timeOfEvent);
-})
+  const output = {};
+  const clicked = event.target;
+  if (clicked.className === 'confirm') {
+  const $timeOfEvent = document.getElementById('time').value;
+  const $dayOfEvent = document.getElementById('day').value;
+  const $eventInfo = document.getElementById('event-info');
+  output.time = $timeOfEvent;
+  output.day = $dayOfEvent;
+  output.event = $eventInfo;
+  const $newTr = renderEntry(output);
+  $overlay.className = 'overlay hidden';
+  $tbody.prepend($newTr);
+
+}
+  });
