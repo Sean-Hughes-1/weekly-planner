@@ -2,6 +2,20 @@
   box-sizing: border-box;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 label {
   padding: 1rem;
   font-weight: bold;
@@ -14,6 +28,11 @@ select {
 button {
   padding: 0.5rem;
   margin: 1rem;
+}
+
+#row-background {
+  background-color: white;
+  text-align: left;
 }
 
 tr:nth-child(even) {
@@ -41,15 +60,19 @@ table {
   background-color: rgb(50, 50, 50);
 }
 
-.container {
+.edit-box {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: space-around;
 }
 
-.row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.align-left {
+  text-align: left;
+  width: 70%;
+}
+
+.edit-button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5%;
 }
