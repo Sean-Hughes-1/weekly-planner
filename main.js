@@ -1,3 +1,8 @@
+let data = [
+  entries = {},
+  editing = null,
+]
+
 const $addNewEvent = document.querySelector('.add-event');
 const $overlay = document.querySelector('.overlay');
 const $cancelButton = document.querySelector('.cancel');
@@ -60,12 +65,23 @@ $entryForm.addEventListener('click', (event) => {
   $tbody.prepend($newTr);
 
   if ($tbody.hasChildNodes()) {
-    $noEntriesText.classList.add('.hidden')
+    $noEntriesText.classList.add('hidden')
+    $table.classList.remove('hidden');
 
-    console.log('tbody has elements');
 } else {
-  $noEntriesText.className = ''
-    console.log('tbody is empty');
+  $noEntriesText.classList.remove('hidden');
+  $table.classList.add('hidden');
+
 }
 }
+window.addEventListener('beforeunload', beforeunloadHandler(output));
+
+
   });
+
+
+
+ function beforeunloadHandler(entry) {
+  const JSONentry = JSON.stringify(entry);
+  localStorage.setItem('event-entry', JSONentry);
+ }
