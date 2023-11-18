@@ -5,6 +5,8 @@ const $confirmButton = document.querySelector('.confirm');
 const $tbody = document.querySelector('tbody');
 const $dayOfWeekDropDown = document.getElementById('days');
 const $entryForm = document.querySelector('.popupForm');
+const $noEntriesText = document.getElementById('no-entries');
+const $table = document.querySelector('table');
 
 $addNewEvent.addEventListener('click', function(event){
   $overlay.className = 'overlay';
@@ -31,10 +33,12 @@ function renderEntry(entry) {
 
   const $editButton = document.createElement('button');
   $editButton.setAttribute('class', 'edit-button');
+  $editButton.textContent = 'Edit';
   $editBoxTd.appendChild($editButton);
 
   const $deleteButton = document.createElement('button');
    $deleteButton.setAttribute('class', 'delete-button');
+   $deleteButton.textContent = 'Delete';
   $editBoxTd.appendChild($deleteButton);
 
   return $tr;
@@ -47,7 +51,7 @@ $entryForm.addEventListener('click', (event) => {
   if (clicked.className === 'confirm') {
   const $timeOfEvent = document.getElementById('time').value;
   const $dayOfEvent = document.getElementById('day').value;
-  const $eventInfo = document.getElementById('event-info');
+  const $eventInfo = document.getElementById('event-info').value;
   output.time = $timeOfEvent;
   output.day = $dayOfEvent;
   output.event = $eventInfo;
@@ -55,5 +59,13 @@ $entryForm.addEventListener('click', (event) => {
   $overlay.className = 'overlay hidden';
   $tbody.prepend($newTr);
 
+  if ($tbody.hasChildNodes()) {
+    $noEntriesText.classList.add('.hidden')
+
+    console.log('tbody has elements');
+} else {
+  $noEntriesText.className = ''
+    console.log('tbody is empty');
+}
 }
   });
